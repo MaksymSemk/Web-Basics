@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Shopping_cart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping_cart.css">
+</head>
+<body>
+    <main class="container">
+        <section class="cart">
+            <section class="addGoodAndButton">
+                <input type="text" placeholder="Назва товару" class="add-good-name">
+                <button class="add-good-button">Додати</button>
+            </section>
+            <ul>
+                <li class="tomatoes-section">
+                    <label class="tomatoes">Помідори</label>
+                    <label class="number">2</label>
+                    <section class="buttons-right">
+                        <button class="presence-button">Не куплено</button>
+                    </section>
+                </li>
+                <li class="cookies-section">
+                    <label class="cookies">Печиво</label>
+                    <section class="center-buttons">
+                        <button class="minus-button">-</button>
+                        <label class="number">2</label>
+                        <button class="plus-button">+</button>
+                    </section>
+                    <section class="buttons-right">
+                        <button class="presence-button">Куплено</button>
+                        <button class="cancel-button">x</button>
+                    </section>
+                </li>
+                <li class="cheese-section">
+                    <input type="text" value="Сир" class="edit-item">
+                    <section class="center-buttons">
+                        <button class="minus-button">-</button>
+                        <label class="number">1</label>
+                        <button class="plus-button">+</button>
+                    </section>
+                    <section class="buttons-right">
+                        <button class="presence-button">Куплено</button>
+                        <button class="cancel-button">x</button>
+                    </section>
+                </li>
+            </ul>
+        </section>
+        <section class="stats">
+            <label class="Left">Залишилося</label>
+            <section class="left-products">
+            <span class="product-item">
+                Печиво
+                <span class="amount">2</span>
+            </span>
+            <span class="product-item">
+                    Сир
+                <span class="amount">1</span>
+            </span>
+            </section>
+            <label class="Bought">Куплено</label>
+            <section class="bought-products">
+            <span class="product-item">
+                Помідори
+            <span class="amount">2</span>
+        </span>
+        </section>
+        </section>
+    </main>
+</body>
+
+</html>
+

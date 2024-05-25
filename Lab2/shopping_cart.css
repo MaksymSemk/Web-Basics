@@ -1,0 +1,86 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: lightgray;
+}
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
+    flex-direction: row;
+    
+}
+
+.cart, .stats{
+   
+    
+    
+    margin: 5px;
+    background-color: white;
+}
+.cart{
+    flex: 50%;
+    margin-bottom: 7px;
+}
+.stats{
+    flex: 15%;
+}
+
+.addGoodAndButton{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border: 5px;
+}
+.add-good-button, .add-good-name{
+    height: 30px;
+    width: 80%;
+    margin: 5px;
+    margin-right: 0px;
+    box-sizing: border-box;
+}
+.add-good-button{
+    width: 20%;
+    background: #007bff;
+    color: white;
+    margin-left: 0px;
+    margin-right: 5px;
+    border: none;
+}
+.tomatoes-section, .cookies-section, .cheese-section{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+}
+.tomatoes{
+    text-decoration: line-through;
+    justify-content: left;
+}
+.tomatoes-section .number{
+    justify-content: center;
+}
+.presence-button{
+    justify-content: right;
+    color: brown;
+}
+.product-item {
+	background-color: gray;
+	display: inline-block;
+	height: 20px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.amount {
+	background-color: yellow;
+	border-radius: 10px;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+}
