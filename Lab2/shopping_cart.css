@@ -337,6 +337,9 @@ body {
         flex-wrap: nowrap;
      white-space: nowrap; 
     }
+    .badge{
+        transform: translateY(+2px);
+    }
     
 }
 @media print {
