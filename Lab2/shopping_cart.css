@@ -120,7 +120,6 @@ body {
     background: lightgray;
     color: rgb(58, 58, 58);
     text-align: center;
-    
     font-weight: 550;
 }
 .minus-button, .plus-button{
@@ -245,6 +244,40 @@ body {
 .bought-products .product-item, .bought-products .amount{
     text-decoration: line-through;
 }
+.badge{
+    position: fixed;
+    bottom: -55px;
+
+    left: 20px; 
+    width: 80px;
+    background-color: darkviolet;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 14px;
+
+}
+.badge:hover{
+    background-color: rgb(25, 0, 255);
+    transform: translateY(-50px);
+}
+.badge::after {
+    content: "Created by: Maksym Semeniuk"; 
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+.badge::before {
+    content: "Buy List"; 
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
 
 /* Media query for screen width less than 500px */
 @media screen and (max-width: 500px) {
@@ -256,4 +289,33 @@ body {
         width: 400px;
         margin-bottom: 20px;
     }
+}
+@media print {
+    .badge {
+        background-color: white; /* Зміна кольору фону на білий під час друку */
+        color: black; /* Зміна кольору тексту на чорний під час друку */
+        border: 2px solid darkviolet; /* Фіолетова обводка */
+        transition: none; /* Вимикаємо переходи під час друку */
+        bottom: 0px;
+        left: 20px;
+    }
+
+    .badge:hover {
+        transform: none; /* Зрушення вгору не застосовується під час друку */
+    }
+    .badge::after {
+        content: "Created by: Maksym Semeniuk"; 
+        display: block;
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .badge::before {
+        content: ""; 
+        display: block;
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+
 }
