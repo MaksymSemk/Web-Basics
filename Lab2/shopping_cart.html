@@ -8,65 +8,114 @@
 </head>
 <body>
     <main class="container">
+         
         <section class="cart">
-            <section class="addGoodAndButton">
-                <input type="text" placeholder="Назва товару" class="add-good-name">
-                <button class="add-good-button">Додати</button>
-            </section>
             <ul>
-                <li class="tomatoes-section">
+            <li class="addGoodAndButton">
+                <input type="text" placeholder="Назва товару" class="add-good-name">
+                <button class="add-good-button">
+                    <span class="front">
+                        Додати
+                        </span></button>
+            </li>
+                <li class="item">
                     <label class="tomatoes">Помідори</label>
-                    <label class="number">2</label>
+                    <section class="center-buttons">
+                        <button class="minus-button" id="tomatoes-minus"><span class="front">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            2
+                            </span></label>
+                        <button class="plus-button" id="tomatoes-plus"><span class="front">
+                            +
+                            </span></button>
+                    </section>
                     <section class="buttons-right">
-                        <button class="presence-button">Не куплено</button>
+                        <button class="cancel-button" id="tomatoes-cancel">
+                            <span class="front">
+                                x
+                                </span>
+                        </button>
+                        <button class="presence-button"><span class="front">
+                            Не куплено
+                            </span></button>
+
                     </section>
                 </li>
-                <li class="cookies-section">
+                <li class="item">
                     <label class="cookies">Печиво</label>
                     <section class="center-buttons">
-                        <button class="minus-button">-</button>
-                        <label class="number">2</label>
-                        <button class="plus-button">+</button>
+                        <button class="minus-button"><span class="front">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            2
+                            </span></label>
+                        <button class="plus-button"><span class="front">
+                            +
+                            </span></button>
                     </section>
                     <section class="buttons-right">
-                        <button class="presence-button">Куплено</button>
-                        <button class="cancel-button">x</button>
+                        <button class="presence-button"><span class="front">
+                            Куплено
+                            </span></button>
+                        <button class="cancel-button"> <span class="front">
+                            x
+                            </span></button>
                     </section>
                 </li>
-                <li class="cheese-section">
+                <li class="item">
                     <input type="text" value="Сир" class="edit-item">
                     <section class="center-buttons">
-                        <button class="minus-button">-</button>
-                        <label class="number">1</label>
-                        <button class="plus-button">+</button>
+                        <button class="minus-button"><span class="front">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            1
+                            </span></label>
+                        <button class="plus-button"><span class="front">
+                            +
+                            </span></button>
                     </section>
                     <section class="buttons-right">
-                        <button class="presence-button">Куплено</button>
-                        <button class="cancel-button">x</button>
+                        <button class="presence-button"> <span class="front">
+                            Куплено
+                            </span></button>
+                        <button class="cancel-button"> <span class="front">
+                            x
+                            </span></button>
                     </section>
                 </li>
             </ul>
         </section>
+
         <section class="stats">
-            <label class="Left">Залишилося</label>
-            <section class="left-products">
-            <span class="product-item">
-                Печиво
-                <span class="amount">2</span>
-            </span>
-            <span class="product-item">
-                    Сир
-                <span class="amount">1</span>
-            </span>
-            </section>
-            <label class="Bought">Куплено</label>
-            <section class="bought-products">
-            <span class="product-item">
-                Помідори
-            <span class="amount">2</span>
-        </span>
-        </section>
-        </section>
+            <ul>
+            <li class="left-label">
+                <label class="Left">Залишилося</label>
+                </li>
+                <li class="left-products">
+                    <span class="product-item">
+                        Печиво
+                        <span class="amount">2</span>
+                    </span>
+                    <span class="product-item">
+                        Сир
+                        <span class="amount">1</span>
+                    </span>
+                </li>
+                <li class="bought-label">
+                <label class="Bought">Куплено</label>
+                </li>
+                <li class="bought-products">
+                    <span class="product-item">
+                        Помідори
+                        <span class="amount">2</span>
+                    </span>
+                </li>
+         </ul>
+         </section>
     </main>
 </body>
 

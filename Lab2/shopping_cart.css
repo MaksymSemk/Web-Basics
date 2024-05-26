@@ -6,68 +6,176 @@ body {
     display: flex;
     justify-content: center; /* Horizontal alignment */
     align-items: center; /* Vertical alignment */
-    width: 80%;
-    margin: 20px auto;
-    gap: 20px;
+ 
+    margin: 5px;
+    gap: 15px;
     flex-direction: row;
     
 }
 
-.cart, .stats{
+.cart ul, .stats ul{
    
-    
-    
-    margin: 5px;
-    background-color: white;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    list-style: none;
+    padding: 0px;
 }
 .cart{
-    flex: 50%;
-    margin-bottom: 7px;
+
+    width: 800px;
+    background-color: white;
+
 }
 .stats{
-    flex: 15%;
-}
+   width: 500px;
+    background-color: white;
 
-.addGoodAndButton{
+}
+.item, .addGoodAndButton{
     display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border-bottom: 1px solid #ccc
+}
+.addGoodAndButton{
     justify-content: center;
-    align-items: center; 
-    border: 5px;
 }
 .add-good-button, .add-good-name{
-    height: 30px;
-    width: 80%;
+    height: 40px;
+    width: 100%;
     margin: 5px;
     margin-right: 0px;
     box-sizing: border-box;
 }
 .add-good-button{
-    width: 20%;
+    width: 140px;
     background: #007bff;
     color: white;
     margin-left: 0px;
     margin-right: 5px;
+    border-radius: 12px;
     border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
 }
-.tomatoes-section, .cookies-section, .cheese-section{
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px;
-}
+.add-good-button .front {
+    display: block;
+    border-radius: 12px;
+    padding: 12px 8px;
+    background: rgb(137, 202, 224);
+    transform: translateY(-3px);
+  }
+
 .tomatoes{
+    width: 100px;
     text-decoration: line-through;
     justify-content: left;
+    box-sizing: border-box;
 }
-.tomatoes-section .number{
+.cookies{
+    width: 100px;
+    box-sizing: border-box;
+
+}
+.edit-item{
+    width: 100px;
+    justify-content: left;
+    box-sizing: border-box;
+}
+
+.buttons-center{
+    display: flex;
     justify-content: center;
 }
-.presence-button{
-    justify-content: right;
-    color: brown;
+.minus-button, .plus-button{
+    width: 40px;
+    height: 40px;
+    background: #7c0a0a;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    box-sizing: border-box;
 }
+.plus-button{
+    background: #09ab21;
+}
+.minus-button .front, .plus-button .front{
+    display: block;
+    border-radius: 20px;
+    padding: 12px 8px;
+    background: red;
+    transform: translateY(-3px);
+}
+.plus-button .front{
+    background: #00d921;
+
+}
+.buttons-right{
+    display: flex;
+    gap: 5px;
+    justify-content: right;
+}
+#tomatoes-minus, #tomatoes-plus, #tomatoes-cancel{
+    visibility: hidden;
+}
+.presence-button{
+    width: 140px;
+    height: 40px;
+    background: #6b6868;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    box-sizing: border-box;
+}
+.presence-button .front {
+    display: block;
+    border-radius: 12px;
+    padding: 12px 8px;
+
+    background: lightgray;
+    transform: translateY(-3px);
+  }
+.cancel-button{
+    width: 40px;
+    height: 40px;
+    background: #7c0a0a;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+.cancel-button .front {
+    display: block;
+    border-radius: 12px;
+    padding: 12px 8px;
+
+    background: red;
+    color: white;
+    transform: translateY(-3px);
+  }
+.cancel-button:active .front,.presence-button:active .front, .add-good-button:active .front, .minus-button:active .front, .plus-button:active .front  {
+    transform: translateY(-2px);
+  }
+
+.left-products, .bought-products{
+    display: flex;
+    flex-direction: row;
+}
+
 .product-item {
 	background-color: gray;
 	display: inline-block;
@@ -83,4 +191,15 @@ body {
 	height: 20px;
 	width: 20px;
 	text-align: center;
+}
+/* Media query for screen width less than 500px */
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .cart, .stats {
+        width: 400px;
+        margin-bottom: 20px;
+    }
 }
