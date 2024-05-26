@@ -6,15 +6,11 @@ body {
     display: flex;
     justify-content: center; /* Horizontal alignment */
     align-items: center; /* Vertical alignment */
- 
     margin: 5px;
     gap: 15px;
-    flex-direction: row;
-    
 }
 
-.cart ul, .stats ul{
-   
+.cart ul, .stats ul{ 
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -27,15 +23,13 @@ body {
     padding: 0px;
 }
 .cart{
-
     width: 800px;
     background-color: white;
-
 }
 .stats{
    width: 500px;
-    background-color: white;
 
+    background-color: white;
 }
 .item, .addGoodAndButton{
     display: flex;
@@ -75,36 +69,74 @@ body {
 }
 .add-good-button .front {
     display: block;
+    position: relative;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     padding: 12px 8px;
     background: rgb(137, 202, 224);
     transform: translateY(-3px);
-  }
-
-.tomatoes{
+}
+.add-good-button .front::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% - 35px);
+    left: -7px;
     width: 100px;
+    background-color: purple;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+.add-good-button .front:hover::after {
+    display: inline;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-37px) scale(1);
+}
+ .front::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% - 35px);
+    left: 30px;
+    background-color: purple;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+ .front:hover::after {
+    display: inline;
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(-40px) scale(1);
+}
+.number .front::after{
+    display: none;
+}
+.tomatoes{
+    width: 80px;
     text-decoration: line-through;
     justify-content: left;
     box-sizing: border-box;
 }
 .cookies{
-    width: 100px;
+    width: 80px;
     box-sizing: border-box;
 
 }
 .edit-item{
-    width: 100px;
+    width: 80px;
     justify-content: left;
     box-sizing: border-box;
 }
-
-.buttons-center{
-    width: 120px;
-    display: flex;
-    justify-content: center;
-}
-
 .number{
     width: 40px;
     height: 40px;
@@ -122,7 +154,7 @@ body {
     text-align: center;
     font-weight: 550;
 }
-.minus-button, .plus-button{
+.minus-button, .plus-button, .disabled-minus-button{
     width: 40px;
     height: 40px;
     background: #7c0a0a;
@@ -136,7 +168,11 @@ body {
 .plus-button{
     background: #09ab21;
 }
-.minus-button .front, .plus-button .front{
+.disabled-minus-button{
+    background: #7c0a0acf;
+    cursor: not-allowed;
+}
+.minus-button .front, .plus-button .front,  .disabled-minus-button .front{
     display: block;
     font-weight: 550;
     border-radius: 20px;
@@ -147,7 +183,9 @@ body {
 }
 .plus-button .front{
     background: #00d921;
-
+}
+.disabled-minus-button .front{
+    background: rgb(227, 72, 72);
 }
 .buttons-right{
     display: flex;
@@ -159,7 +197,7 @@ body {
 }
 .presence-button{
     font-weight: 550;
-    width: 140px;
+    width: 100px;
     height: 40px;
     background: #6b6868;
     border-radius: 5px;
@@ -279,7 +317,6 @@ body {
 }
 
 
-/* Media query for screen width less than 500px */
 @media screen and (max-width: 500px) {
     .container {
         flex-direction: column;
@@ -290,18 +327,25 @@ body {
         margin-bottom: 20px;
     }
 }
+@media screen and (min-width: 501px) and (max-width: 850px) {
+    
+    .container{
+        flex-wrap: wrap;
+        flex: 400px;
+    }
+}
 @media print {
     .badge {
-        background-color: white; /* Зміна кольору фону на білий під час друку */
-        color: black; /* Зміна кольору тексту на чорний під час друку */
-        border: 2px solid darkviolet; /* Фіолетова обводка */
-        transition: none; /* Вимикаємо переходи під час друку */
+        background-color: white; 
+        color: black;
+        border: 2px solid darkviolet; 
+        transition: none; 
         bottom: 0px;
         left: 20px;
     }
 
     .badge:hover {
-        transform: none; /* Зрушення вгору не застосовується під час друку */
+        transform: none;
     }
     .badge::after {
         content: "Created by: Maksym Semeniuk"; 
@@ -317,5 +361,4 @@ body {
         text-align: center;
         margin-top: 5px;
     }
-
 }
