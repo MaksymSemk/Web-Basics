@@ -320,22 +320,28 @@ body {
 @media screen and (max-width: 500px) {
     .container {
         flex-direction: column;
+        overflow-x: hidden;
     }
 
     .cart, .stats {
         width: 400px;
         margin-bottom: 20px;
     }
+    .badge{
+        transform: translateY(+2px);
+    }
 }
 @media screen and (min-width: 501px) and (max-width: 850px) {
     
     .container{
-        flex-wrap: wrap;
-        flex: 400px;
+        flex-wrap: nowrap;
+     white-space: nowrap; 
     }
+    
 }
 @media print {
     .badge {
+       
         background-color: white; 
         color: black;
         border: 2px solid darkviolet; 
