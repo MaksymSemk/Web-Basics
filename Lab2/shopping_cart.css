@@ -42,26 +42,32 @@ body {
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-    margin: 15px;
+   /* margin: 15px;*/
+    padding: 10px;
     border-bottom: 1px solid #ccc
 }
 .addGoodAndButton{
     justify-content: center;
 }
 .add-good-button, .add-good-name{
-    height: 40px;
+    height: 43px;
     width: 100%;
     margin: 5px;
     margin-right: 0px;
     box-sizing: border-box;
 }
+.add-good-name{
+    transform: translateY(-1.5px);
+}
 .add-good-button{
+    height: 40px;
     width: 140px;
     background: #007bff;
     color: white;
     margin-left: 0px;
     margin-right: 5px;
-    border-radius: 12px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -69,7 +75,8 @@ body {
 }
 .add-good-button .front {
     display: block;
-    border-radius: 12px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     padding: 12px 8px;
     background: rgb(137, 202, 224);
     transform: translateY(-3px);
@@ -93,8 +100,28 @@ body {
 }
 
 .buttons-center{
+    width: 120px;
     display: flex;
     justify-content: center;
+}
+
+.number{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.number .front{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    background: lightgray;
+    color: rgb(58, 58, 58);
+    text-align: center;
+    
+    font-weight: 550;
 }
 .minus-button, .plus-button{
     width: 40px;
@@ -112,8 +139,10 @@ body {
 }
 .minus-button .front, .plus-button .front{
     display: block;
+    font-weight: 550;
     border-radius: 20px;
     padding: 12px 8px;
+    color: white;
     background: red;
     transform: translateY(-3px);
 }
@@ -130,10 +159,11 @@ body {
     visibility: hidden;
 }
 .presence-button{
+    font-weight: 550;
     width: 140px;
     height: 40px;
     background: #6b6868;
-    border-radius: 12px;
+    border-radius: 5px;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -141,10 +171,11 @@ body {
     box-sizing: border-box;
 }
 .presence-button .front {
+    font-weight: 550;
     display: block;
-    border-radius: 12px;
+    border-radius: 5px;
     padding: 12px 8px;
-
+    color: rgb(99, 99, 99);
     background: lightgray;
     transform: translateY(-3px);
   }
@@ -168,30 +199,53 @@ body {
     transform: translateY(-3px);
   }
 .cancel-button:active .front,.presence-button:active .front, .add-good-button:active .front, .minus-button:active .front, .plus-button:active .front  {
-    transform: translateY(-2px);
+    transform: translateY(-2px)
   }
+
 
 .left-products, .bought-products{
     display: flex;
     flex-direction: row;
 }
 
+.left-label, .left-products, .bought-label, .bought-products{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: left;
+    gap: 5px;
+    align-items: center;
+    margin-left: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ccc
+}   
+.left-label, .bought-label{
+    font-size: 23px;
+    font-weight: 900;
+    padding: 10px;
+}
+
 .product-item {
-	background-color: gray;
+	background-color: rgb(222, 222, 222);
 	display: inline-block;
 	height: 20px;
-	padding: 5px;
+	padding: 10px;
+    color: #6e6e6e;
 	border-radius: 5px;
 }
 
 .amount {
-	background-color: yellow;
+	background-color: rgb(255, 102, 0);
 	border-radius: 10px;
 	display: inline-block;
 	height: 20px;
 	width: 20px;
 	text-align: center;
+    color: white;
 }
+.bought-products .product-item, .bought-products .amount{
+    text-decoration: line-through;
+}
+
 /* Media query for screen width less than 500px */
 @media screen and (max-width: 500px) {
     .container {
