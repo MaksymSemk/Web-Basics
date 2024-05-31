@@ -3,10 +3,12 @@ body {
     background-color: lightgray;
 }
 .container {
+    width: 100%;
     display: flex;
+    flex-direction: row ;
     justify-content: center; /* Horizontal alignment */
     align-items: center; /* Vertical alignment */
-    flex-direction: row;
+
     margin: 5px;
     gap: 15px;
 }
@@ -17,11 +19,11 @@ body {
     padding: 0px;
 }
 .cart{
-    width: 70%;
+   width: 800px;
     background-color: white;
 }
 .stats{
-    width: 25%;
+    width: 500px;
     background-color: white;
 }
 .item, .addGoodAndButton{
@@ -35,6 +37,7 @@ body {
 }
 .addGoodAndButton{
     justify-content: center;
+    box-sizing: border-box;
 }
 .add-good-button, .add-good-name{
     height: 43px;
@@ -127,7 +130,7 @@ body {
 }
 
 .center-buttons{
-    width: 30%;
+    width: 140px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -135,7 +138,7 @@ body {
     gap: 5px;
 }
 .number{
-    width: 33%;
+    width: 40px;
     max-width: 40px;
     height: 40px;
     border-radius: 5px;
@@ -148,7 +151,7 @@ body {
 }
 
 .minus-button, .plus-button, .disabled-minus-button{
-    width: 33%;
+    width: 40px;
     max-width: 40px;
     height: 40px;
     background: #7c0a0a;
@@ -186,11 +189,12 @@ body {
     gap: 5px;
     justify-content: right;
 }
-#tomatoes-minus, #tomatoes-plus, #tomatoes-cancel{
+#minus-hidden, #plus-hidden, #cancel-hidden, #bought-prod{
     visibility: hidden;
 }
 .buttons-right{
     width: 30%;
+    min-width: 150px;
 }
 .presence-button{
     font-weight: 550;
@@ -207,7 +211,6 @@ body {
     box-sizing: border-box;
 }
 .presence-button .front {
-
     font-weight: 550;
     display: block;
     border-radius: 5px;
@@ -217,8 +220,7 @@ body {
     transform: translateY(-3px);
   }
 .cancel-button{
-    width: 20%;
-    max-width: 40px;
+    width: 40px;
     height: 40px;
     background: #7c0a0a;
     border-radius: 12px;
@@ -248,6 +250,8 @@ body {
 
 .left-label, .left-products, .bought-label, .bought-products{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: left;
     gap: 5px;
@@ -264,7 +268,8 @@ body {
 
 .product-item {
 	background-color: rgb(222, 222, 222);
-	display: inline-block;
+	display: flex;
+    flex-direction: row;
 	height: 20px;
 	padding: 10px;
     color: #6e6e6e;
@@ -274,7 +279,7 @@ body {
 .amount {
 	background-color: rgb(255, 102, 0);
 	border-radius: 10px;
-	display: inline-block;
+	display: inline;
 	height: 20px;
 	width: 20px;
 	text-align: center;
@@ -335,6 +340,7 @@ body {
         transform: translateY(+2px);
     }
 }
+
 @media print {
     .badge {
         background-color: white; 
