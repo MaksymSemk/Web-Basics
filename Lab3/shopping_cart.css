@@ -233,6 +233,8 @@
         outline-offset: 4px;
     }
     .cancel-button .front {
+        font-weight: 550;
+
         display: block;
         border-radius: 12px;
         padding: 12px 8px;
