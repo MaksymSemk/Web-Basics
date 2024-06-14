@@ -1,0 +1,748 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.cart, .main{
+   width: 75%;
+    display: flex;
+}
+.main {
+    position: relative;
+    display: block;
+    background-color: lightyellow;
+    overflow-y: unset; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disables horizontal scrolling */
+    height: 100vh;
+}
+
+
+.logo{
+    z-index: 1000;
+    position: fixed;    
+    
+    margin-left: 10px ;
+    margin-right: 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+  
+    border: 0;
+    box-sizing: border-box;
+}
+.logoLabels{
+    background-color: #EA862E;  
+    width: 80px;
+    height: 100px; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    margin: 0;
+}
+.pizzaLogo{
+    font-size: 18px;
+}
+.KMALogo{
+    font-size: 20px;
+}
+.logo-svg{
+    box-sizing: border-box;
+    position: relative;
+    bottom: 4px;
+    transform: rotate(180deg);
+}
+.logo-svg img{
+    width: 80px;
+}
+
+.discountBadge{
+    z-index: 1000;
+    position: fixed;
+    bottom: 1px;
+    width: 8    0px;
+    margin-left: 10px ;
+    margin-right: 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+  
+    border: 0;
+    box-sizing: border-box;
+}
+.discountLabels{
+    background-color: #EA862E;  
+    width: 80px;
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+.discountBadge li:first-child{
+    border-bottom: 2px solid rgb(198, 128, 0);
+
+    font-size: 20px;
+    text-align: center;
+}
+.discountBadge li:last-child{
+    font-size: 18px;
+    text-align: center;
+
+}
+.discount-svg{
+    box-sizing: border-box;
+    position: relative;
+    top: 4px;
+}
+.discount-svg img{
+    width: 80px;
+}
+.main header{
+    z-index: 900;
+    padding-left: 130px;
+    padding-right: 20px;
+    position: fixed;
+    display: flex;
+    width: 75%;
+    box-sizing: border-box;
+    background-color: black;    
+    color: white;
+    opacity: 0.8;
+}
+.main header ul{
+    width: 100%;
+    padding: 0;
+    padding-top: 3px;
+    margin: 0;
+    list-style: none;
+}
+.info{
+    padding-bottom: 3px;
+    border-bottom: 2px solid lightgray;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: baseline;
+    gap: 20px;
+    color: lightgray;
+}
+.number{
+    font-size: 20px;
+}
+.workTime{
+    font-size: 13px;
+}
+.freeDelivery{
+    font-size: 17px;
+}
+.logInButton{
+    margin-left: auto; /* Pushes the button to the right */
+    background-color: orange;
+    color: #ffffff;
+    padding: 10px 20px;   
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.logInButton:hover{
+    background-color: #EA862E;
+}
+.productsList{
+    padding-top: 10px ;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.menu{
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+  
+}
+.filterAndLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .allPizzasLabel {
+    display: flex;
+    align-items: center;
+  }
+  
+  .allPizzasLabel span:first-child {
+    font-weight: bold;
+    font-size: 25px;
+  }
+  
+  .allPizzasLabel span:last-child {
+    margin-left: 5px;
+    background-color:orange;
+    border-radius: 10px;
+    display: inline;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .filters {
+    display: inline-block;
+   
+  }
+  
+  .filters span {
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: orange;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .filters span:hover {
+    background-color: #EA862E;
+    color: white;
+  }
+.products{
+    padding-top: 10px;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Two columns, each 1 fraction unit */
+    grid-template-rows: auto auto  ; /* Two rows, auto size */
+    gap: 20px;
+}  
+.item{
+    border: 2px solid lightgray ;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 5px;
+}
+.itemDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.itemName{
+    font-weight: bold;
+    color: #EA862E;
+    font-size: 25px;
+}
+.itemType{
+    color: lightgray;
+    font-size: 12px;
+}
+.itemContent{
+    font-size: 15px;
+}
+.itemPrice{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    font-size: 12px;
+    padding-top: 5px;
+}
+.itemPrice[data-prices="one"]{
+    display: grid;
+    grid-template-columns: 1fr; 
+    font-size: 12px;
+    padding-top: 5px;
+}
+.onePrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.size, .weight{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2px;
+    font-size: 15px;
+}
+.price{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+.price label{
+    padding: 0;
+    margin: 0;
+}
+.price label:first-child{
+    font-weight: bold;
+    font-size: 25px;
+}
+.buyItem{
+
+    background-color: orange;
+    color: #ffffff;
+    padding: 10px 20px;   
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 80px;
+    align-self: center;
+    
+}
+.buyItem:hover{
+    background-color: #EA862E;
+}
+.item[data-tip="Нова"]::after{
+    content: attr(data-tip);
+    font-size: 15px;
+    position: absolute;
+    transform: translate(210px, -20px);
+    width: 40px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 800;
+}
+.item[data-tip="Популярна"]::after{
+    content: attr(data-tip);
+    font-size: 15px;
+    position: absolute;
+    transform: translate(180px, -20px);
+    width: 75px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 800;
+}
+footer {
+    background-color: rgb(190, 190, 190);
+    color: rgb(91, 91, 91);
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.cart {
+    background-color: white;
+    width: 25%;
+    overflow: hidden; /* Disables horizontal scrolling */
+}
+.cart ul{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.top{
+    height: 101px;
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f1f1f1;
+}
+.labelOrder{
+    font-weight: bold;
+    font-size: 25px;
+}
+.numberProds {
+    margin-left: 5px;
+    background-color:orange;
+    border-radius: 10px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: white;
+}
+.clearCart{
+    margin-left: auto; /* Pushes the button to the right */
+    background-color: inherit;
+    color: lightgray;
+    font-size: small;
+    border: 0;
+    border: none;
+    cursor: pointer;
+
+}
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 10px;
+    background-color: #f1f1f1;
+
+}
+.finalSum{
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left */
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.sum{
+    
+    margin-left: auto; /* Pushes the button to the right */
+    font-size: 25px;
+}
+.orderButton{
+    background-color: orange;
+    color: #ffffff;
+    padding: 10px 20px;   
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 80%;
+    align-self: center;
+}
+.orderButton:hover{
+    background-color: #EA862E;
+}
+.boughtProds{
+    height: 65%;
+    background-color: white;
+    list-style: none;
+    overflow-y: unset; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disables horizontal scrolling */
+}
+.boughtItem{
+    display: flex;
+    overflow: hidden;
+    height: 100px;
+    background-color: white;
+    border-bottom: 2px solid lightgrey;
+
+}
+.itemImage{
+    width: 30%;
+    transform: translateX(calc(50%));
+}
+.boughtItemInfo{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.boughtItemInfo div{
+    font-weight: bold;
+
+    color: #EA862E;
+    font-size: 18px;
+}
+.boughtitemCharacteristics{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.boughtsum{
+    font-weight: bold;
+}
+.sumAndButtons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.minus, .plus, .delete{
+   /* width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    border: 2px solid red;
+    background-color: rgb(255, 80, 80);
+    padding: 0;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;*/
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: red;
+    border: 0px;
+    border-bottom: 3px solid darkred;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, red, rgb(192, 0, 0)); 
+}
+.plus{
+    /*border: 2px solid green;
+    background-color: rgb(56, 119, 56);*/
+    border-bottom: 3px solid rgb(41, 111, 0); 
+    background-image: linear-gradient(to bottom, rgb(81, 255, 0), rgb(62, 170, 0));
+}
+.delete{
+ /*   margin-left: 30px;
+    border: 2px solid lightgray;
+    background-color: rgb(246, 246, 246);
+    color: orange;*/
+    color: orange;
+    border-bottom: 3px solid rgb(152, 152, 152);
+    background-image: linear-gradient(to bottom, white, #e3e3e3);
+}
+.delete:hover{
+    background-image: linear-gradient(to bottom, #e3e3e3, #e3e3e3);
+}
+.plus:hover{
+    background-image: linear-gradient(to bottom, rgb(41, 111, 0), rgb(41, 111, 0));
+  background-color: rgb(62, 170, 0);
+}
+.minus:hover{
+    background-image: linear-gradient(to bottom, darkred, darkred);
+  background-color: darkred;
+}
+button:active{
+    transform: translateY(2px);
+}
+@media screen and (max-width: 1300px)  and (min-width: 1000px) {
+  
+    .main header{
+        width: 65%;
+    }
+    .main{
+        width: 65%;
+    }
+    .cart{
+        width: 35%;
+    }
+    .item{
+        width: 175px;
+    }
+    .freeDelivery{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 1000px)  and (min-width: 700px) {
+    .products{
+        grid-template-columns: 1fr 1fr; /* Two columns, each 1 fraction unit */
+    }  
+    .main header{
+        width: 65%;
+    }
+    .main{
+        width: 65%;
+    }
+    .cart{
+        width: 35%;
+    }
+    .labelOrder{
+        font-size: 15px;
+    }
+    .freeDelivery{
+        display: none;
+    }
+    .item{
+        width: 175px;
+    }
+    .item[data-tip="Нова"]::after{
+        
+        transform: translate(130px, -20px);
+     
+    }
+    .item[data-tip="Популярна"]::after{
+
+        transform: translate(95px, -20px);
+        
+    }
+ 
+    .boughtItemInfo div{
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width: 700px) and (min-width: 600px)  {
+    .products{
+        grid-template-columns: 1fr; /* Two columns, each 1 fraction unit */
+    }  
+    .main header{
+        width: 50%;
+        padding-left: 100px;
+    }
+    .main{
+        width: 50%;
+    }
+    .cart{
+        width: 50%;
+    }
+
+
+    .freeDelivery, .workTime{
+        display: none;
+    }
+    .number{
+        font-size: small;
+    }
+    .logInButton{
+        font-size: small;
+    }
+    
+    .logo, .logo-svg img, .logoLabels,.discount-svg img, .discountBadge, .discountLabels{
+            width: 80px;
+    }
+    .discountBadge li:first-child{
+    
+        font-size: 13px;
+    }
+    .discountBadge li:last-child{
+        font-size: 9px;
+    
+    }
+    .item{
+        width: 175px;
+    }
+    .item[data-tip="Нова"]::after{
+        
+        transform: translate(130px, -20px);
+     
+    }
+    .item[data-tip="Популярна"]::after{
+
+        transform: translate(95px, -20px);
+        
+    }
+    .labelOrder{
+        font-size: 15px;
+    }
+    .numberProds{
+        font-size: 15px;
+    }
+  .clearCart{
+        font-size: small;
+
+    }
+    .sumAndButtons{
+        gap: 2px;;
+    }
+    .delete{
+        margin-left: 2px;
+    }
+    
+    .boughtItemInfo div{
+        font-size: 12px;
+    }
+    .boughtsum{
+        font-size: small;
+    }
+}
+@media screen and (max-width: 600px)  {
+    .products{
+        grid-template-columns: 1fr; /* Two columns, each 1 fraction unit */
+    }  
+    .main header{
+        width: 50%;
+        padding-left: 100px;
+    }
+    .main{
+        width: 50%;
+    }
+    .cart{
+        width: 50%;
+    }
+
+    .productsList{
+        font-size: 3px;
+        visibility: hidden;
+    }
+    .freeDelivery, .workTime{
+        display: none;
+    }
+    .number{
+        font-size: small;
+    }
+    .logInButton{
+        font-size: small;
+        padding-right: 10px;
+    }
+    .logo, .logo-svg img, .logoLabels,.discount-svg img, .discountBadge, .discountLabels{
+            width: 80px;
+    }
+    .discountBadge li:first-child{
+    
+        font-size: 13px;
+    }
+    .discountBadge li:last-child{
+        font-size: 9px;
+    
+    }
+    .item{
+        width: 175px;
+    }
+    .item[data-tip="Нова"]::after{
+        
+        transform: translate(130px, -20px);
+     
+    }
+    .item[data-tip="Популярна"]::after{
+
+        transform: translate(95px, -20px);
+        
+    }
+    .labelOrder{
+        font-size: 15px;
+    }
+    .numberProds{
+        font-size: 15px;
+    }
+  .clearCart{
+        font-size: small;
+
+    }
+    .sumAndButtons{
+        gap: 2px;;
+    }
+    .delete{
+        margin-left: 2px;
+    }
+    
+    .boughtItemInfo div{
+        font-size: 12px;
+    }
+    .boughtsum{
+        font-size: small;
+    }
+    
+}
