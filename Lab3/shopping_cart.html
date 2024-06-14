@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Shopping_cart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping_cart.css">
+</head>
+<body>
+    <main class="container">
+        <section class="cart">
+            <ul id="cart-list">
+            <li class="addGoodAndButton">
+                <input type="text" placeholder="Назва товару" class="add-good-name">
+                <button class="add-good-button" >
+                    <span class="front" data-tooltip="Додати товар">
+                        Додати
+                        </span></button>
+            </li>
+            </ul>
+        </section>
+        <section class="stats">
+            <ul>
+            <li class="left-label">
+                <label class="Left">Залишилося</label>
+                </li>
+                <li class="left-products">
+                    <span class="product-item">
+                        Печиво
+                        <span class="amount">2</span>
+                    </span>
+                    <span class="product-item">
+                        Сир
+                        <span class="amount">1</span>
+                    </span>
+                </li>
+                <li class="bought-label">
+                <label class="Bought">Куплено</label>
+                </li>
+                <li class="bought-products">
+                    <span class="product-item">
+                        Помідори
+                        <span class="amount">2</span>
+                    </span>
+                </li>
+         </ul>
+         </section>
+    </main>
+    <section class="badge-section">
+        <span class="badge">
+        </span>
+    </section>
+    <script src="sh_cart.js"> initFirst3Products();</script>
+</body>
+
+</html>
+
