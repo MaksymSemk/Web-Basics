@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Shopping_cart">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopping_cart.css">
+</head>
+<body>
+    <main class="container">
+         
+        <section class="cart">
+            <ul>
+            <li class="addGoodAndButton">
+                <input type="text" placeholder="Назва товару" class="add-good-name">
+                <button class="add-good-button" >
+                    <span class="front" data-tooltip="Додати товар">
+                        Додати
+                        </span></button>
+            </li>
+                <li class="item">
+                    <label class="tomatoes">Помідори</label>
+                    <section class="center-buttons">
+                        <button class="minus-button" id="tomatoes-minus"><span class="front"   data-tooltip="Відняти кількість">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            2
+                            </span></label>
+                        <button class="plus-button" id="tomatoes-plus" ><span class="front"  data-tooltip="Додати кількість">
+                            +
+                            </span></button>
+                    </section>
+                    <section class="buttons-right">
+                        <button class="cancel-button" id="tomatoes-cancel" >
+                            <span class="front"  data-tooltip="Прибрати товар">
+                                x
+                                </span>
+                        </button>
+                        <button class="presence-button" ><span class="front"  data-tooltip="Стан товару">
+                            Не куплено
+                            </span></button>
+
+                    </section>
+                </li>
+                <li class="item">
+                    <label class="cookies">Печиво</label>
+                    <section class="center-buttons">
+                        <button class="minus-button"><span class="front"  data-tooltip="Відняти кількість">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            2
+                            </span></label>
+                        <button class="plus-button"><span class="front"   data-tooltip="Додати кількість">
+                            +
+                            </span></button>
+                    </section>
+                    <section class="buttons-right">
+                        <button class="presence-button"><span class="front"  data-tooltip="Стан товару">
+                            Куплено
+                            </span></button>
+                        <button class="cancel-button" > <span class="front"  data-tooltip="Прибрати товар">
+                            x
+                            </span></button>
+                    </section>
+                </li>
+                <li class="item">
+                    <input type="text" value="Сир" class="edit-item">
+                    <section class="center-buttons">
+                        <button class="disabled-minus-button" id="disabled-button" disabled  ><span class="front" data-tooltip="Відняти кількість">
+                            -
+                            </span></button>
+                        <label class="number"><span class="front">
+                            1
+                            </span></label>
+                        <button class="plus-button" ><span class="front"  data-tooltip="Додати кількість">
+                            +
+                            </span></button>
+                    </section>
+                    <section class="buttons-right">
+                        <button class="presence-button" > <span class="front" data-tooltip="Стан товару">
+                            Куплено
+                            </span></button>
+                        <button class="cancel-button"> <span class="front"  data-tooltip="Прибрати товар">
+                            x
+                            </span></button>
+                    </section>
+                </li>
+            </ul>
+        </section>
+
+        <section class="stats">
+            <ul>
+            <li class="left-label">
+                <label class="Left">Залишилося</label>
+                </li>
+                <li class="left-products">
+                    <span class="product-item">
+                        Печиво
+                        <span class="amount">2</span>
+                    </span>
+                    <span class="product-item">
+                        Сир
+                        <span class="amount">1</span>
+                    </span>
+                </li>
+                <li class="bought-label">
+                <label class="Bought">Куплено</label>
+                </li>
+                <li class="bought-products">
+                    <span class="product-item">
+                        Помідори
+                        <span class="amount">2</span>
+                    </span>
+                </li>
+         </ul>
+         </section>
+        
+    </main>
+    <section class="badge-section">
+        <span class="badge">
+        </span>
+     </section>
+</body>
+
+</html>
+

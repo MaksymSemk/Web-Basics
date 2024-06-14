@@ -1,0 +1,373 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: lightgray;
+}
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    margin: 5px;
+    gap: 15px;
+}
+
+.cart ul, .stats ul{ 
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    list-style: none;
+    padding: 0px;
+}
+.cart{
+    width: 800px;
+    background-color: white;
+}
+.stats{
+   width: 500px;
+
+    background-color: white;
+}
+.item, .addGoodAndButton{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+   /* margin: 15px;*/
+    padding: 10px;
+    border-bottom: 1px solid #ccc
+}
+.addGoodAndButton{
+    justify-content: center;
+}
+.add-good-button, .add-good-name{
+    height: 43px;
+    width: 100%;
+    margin: 5px;
+    margin-right: 0px;
+    box-sizing: border-box;
+}
+.add-good-name{
+    transform: translateY(-1.5px);
+}
+.add-good-button{
+    height: 40px;
+    width: 140px;
+    background: #007bff;
+    color: white;
+    margin-left: 0px;
+    margin-right: 5px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+.add-good-button .front {
+    display: block;
+    position: relative;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 12px 8px;
+    background: rgb(137, 202, 224);
+    transform: translateY(-3px);
+}
+.add-good-button .front::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% - 35px);
+    left: -7px;
+    width: 100px;
+    background-color: purple;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 1000;
+}
+.add-good-button .front:hover::after {
+    display: inline;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-37px) scale(1);
+}
+ .front::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% - 35px);
+    left: 30px;
+    background-color: purple;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+ .front:hover::after {
+    display: inline;
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(-40px) scale(1);
+}
+.number .front::after{
+    display: none;
+}
+.tomatoes{
+    width: 80px;
+    text-decoration: line-through;
+    justify-content: left;
+    box-sizing: border-box;
+}
+.cookies{
+    width: 80px;
+    box-sizing: border-box;
+
+}
+.edit-item{
+    width: 80px;
+    justify-content: left;
+    box-sizing: border-box;
+}
+.number{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.number .front{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    background: lightgray;
+    color: rgb(58, 58, 58);
+    text-align: center;
+    font-weight: 550;
+}
+.minus-button, .plus-button, .disabled-minus-button{
+    width: 40px;
+    height: 40px;
+    background: #7c0a0a;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    box-sizing: border-box;
+}
+.plus-button{
+    background: #09ab21;
+}
+.disabled-minus-button{
+    background: #7c0a0acf;
+    cursor: not-allowed;
+}
+.minus-button .front, .plus-button .front,  .disabled-minus-button .front{
+    display: block;
+    font-weight: 550;
+    border-radius: 20px;
+    padding: 12px 8px;
+    color: white;
+    background: red;
+    transform: translateY(-3px);
+}
+.plus-button .front{
+    background: #00d921;
+}
+.disabled-minus-button .front{
+    background: rgb(227, 72, 72);
+}
+.buttons-right{
+    display: flex;
+    gap: 5px;
+    justify-content: right;
+}
+#tomatoes-minus, #tomatoes-plus, #tomatoes-cancel{
+    visibility: hidden;
+}
+.presence-button{
+    font-weight: 550;
+    width: 100px;
+    height: 40px;
+    background: #6b6868;
+    border-radius: 5px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    box-sizing: border-box;
+}
+.presence-button .front {
+    font-weight: 550;
+    display: block;
+    border-radius: 5px;
+    padding: 12px 8px;
+    color: rgb(99, 99, 99);
+    background: lightgray;
+    transform: translateY(-3px);
+  }
+.cancel-button{
+    width: 40px;
+    height: 40px;
+    background: #7c0a0a;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+.cancel-button .front {
+    display: block;
+    border-radius: 12px;
+    padding: 12px 8px;
+
+    background: red;
+    color: white;
+    transform: translateY(-3px);
+  }
+.cancel-button:active .front,.presence-button:active .front, .add-good-button:active .front, .minus-button:active .front, .plus-button:active .front  {
+    transform: translateY(-2px)
+  }
+
+
+.left-products, .bought-products{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-label, .left-products, .bought-label, .bought-products{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: left;
+    gap: 5px;
+    align-items: center;
+    margin-left: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ccc
+}   
+.left-label, .bought-label{
+    font-size: 23px;
+    font-weight: 900;
+    padding: 10px;
+}
+
+.product-item {
+	background-color: rgb(222, 222, 222);
+	display: inline-block;
+	height: 20px;
+	padding: 10px;
+    color: #6e6e6e;
+	border-radius: 5px;
+}
+
+.amount {
+	background-color: rgb(255, 102, 0);
+	border-radius: 10px;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+    color: white;
+}
+.bought-products .product-item, .bought-products .amount{
+    text-decoration: line-through;
+}
+.badge{
+    position: fixed;
+    bottom: -55px;
+
+    left: 20px; 
+    width: 80px;
+    background-color: darkviolet;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 14px;
+
+}
+.badge:hover{
+    background-color: rgb(25, 0, 255);
+    transform: translateY(-50px);
+}
+.badge::after {
+    content: "Created by: Maksym Semeniuk"; 
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+.badge::before {
+    content: "Buy List"; 
+    display: block;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .cart, .stats {
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    .badge{
+        transform: translateY(+2px);
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 850px) {
+    
+    .container{
+        flex-wrap: nowrap;
+     white-space: nowrap; 
+    }
+    .badge{
+        transform: translateY(+2px);
+    }
+    
+}
+@media print {
+    .badge {
+       
+        background-color: white; 
+        color: black;
+        border: 2px solid darkviolet; 
+        transition: none; 
+        bottom: 0px;
+        left: 20px;
+    }
+
+    .badge:hover {
+        transform: none;
+    }
+    .badge::after {
+        content: "Created by: Maksym Semeniuk"; 
+        display: block;
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .badge::before {
+        content: ""; 
+        display: block;
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+}
