@@ -362,7 +362,8 @@
         .minus-button,
         .plus-button,
         .presence-button,
-        .cancel-button{
+        .cancel-button,
+        .disabled-minus-button{
         height: 30px;
         max-width: 30px;
         min-width: 30px;
@@ -384,7 +385,7 @@
         
     }
 
-    .minus-button, .plus-button{
+    .minus-button, .plus-button, .disabled-minus-button{
             border-radius: 15px;
         }
     .number{
@@ -400,7 +401,8 @@
     .minus-button .front,
     .plus-button .front,
     .presence-button .front,
-    .cancel-button .front {
+    .cancel-button .front,
+    .disabled-minus-button .front {
         padding: 6px 4px;
     } 
 

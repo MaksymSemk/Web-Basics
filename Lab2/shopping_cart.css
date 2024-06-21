@@ -3,22 +3,17 @@ body {
     background-color: lightgray;
 }
 .container {
+    width: 100%;
+
     display: flex;
-    justify-content: center; /* Horizontal alignment */
-    align-items: center; /* Vertical alignment */
+    justify-content: center;
+    align-items: center; 
     margin: 5px;
     gap: 15px;
 }
 
 .cart ul, .stats ul{ 
     display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    unicode-bidi: isolate;
     list-style: none;
     padding: 0px;
 }
@@ -247,6 +242,8 @@ body {
 
 .left-label, .left-products, .bought-label, .bought-products{
     display: flex;
+    flex-direction: row;
+
     box-sizing: border-box;
     justify-content: left;
     gap: 5px;
@@ -263,7 +260,8 @@ body {
 
 .product-item {
 	background-color: rgb(222, 222, 222);
-	display: inline-block;
+    display: flex;
+    flex-direction: row;
 	height: 20px;
 	padding: 10px;
     color: #6e6e6e;
@@ -273,7 +271,7 @@ body {
 .amount {
 	background-color: rgb(255, 102, 0);
 	border-radius: 10px;
-	display: inline-block;
+	display: inline;
 	height: 20px;
 	width: 20px;
 	text-align: center;
@@ -331,16 +329,71 @@ body {
         transform: translateY(+2px);
     }
 }
-@media screen and (min-width: 501px) and (max-width: 850px) {
-    
-    .container{
-        flex-wrap: nowrap;
-     white-space: nowrap; 
-    }
-    .badge{
-        transform: translateY(+2px);
+@media screen and (min-width: 502px) and (max-width: 850px) {
+    body {
+        font-size: small;
+        background-color: lightgray;
     }
     
+   
+    .tomatoes, .cookies{
+        width: 35px;
+    }
+    .edit-item{
+        width: 35px;
+    }
+    .add-good-button, .add-good-name{
+        height: 33px;
+    }
+    
+    .minus-button,
+    .plus-button,
+    .presence-button,
+    .cancel-button,
+    .disabled-minus-button{
+    height: 30px;
+    max-width: 30px;
+    min-width: 30px;
+    border-radius: 5px;
+    padding: 0; /* Adjust padding as needed */
+}
+.presence-button{
+    font-size: smaller;
+    max-width: none;
+    min-width: 70px;
+    width: 70px;
+}
+.presence-button .front{
+    scale: 1 1.2;
+}
+.add-good-button{
+    height: 30px;
+    width: 20%;
+    
+}
+
+.minus-button, .plus-button,  .disabled-minus-button{
+        border-radius: 15px;
+    }
+.number{
+    max-width: 30px;
+    min-width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+.cancel-button .front{
+    border-radius: 5px;
+}
+.add-good-button .front,
+.minus-button .front,
+.plus-button .front,
+.presence-button .front,
+.cancel-button .front,
+.disabled-minus-button .front
+ {
+    padding: 6px 4px;
+} 
+
 }
 @media print {
     .badge {

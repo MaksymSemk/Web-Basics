@@ -15,8 +15,8 @@ function initFirst3Products(){
 function addItem(prodName, number, isBought) {
     let prodNames=document.querySelectorAll('.prodName');
     let isPresentName=false;
-    prodNames.forEach(name=>{
-            if(name.textContent==prodName){
+    prodNames.forEach(name=>{   
+            if(name.textContent.toLowerCase() === prodName.toLowerCase()){
                 isPresentName=true;
             }
         });
@@ -149,7 +149,11 @@ function editItem(){
 
     // Handle input blur event to save changes
     input.addEventListener('blur', function() {
-        // Create a new label element
+        if (input.value.trim() === "") {
+            // If the input is empty, revert back to the original label
+            input.parentNode.replaceChild(prodToEdit, input);
+        } else {
+            // Create a new label element
         let newLabel = document.createElement('label');
         newLabel.textContent = input.value;
         newLabel.className = 'prodName'; // Keep the class name for styling
@@ -160,6 +164,7 @@ function editItem(){
         localStorage.removeItem(value);
         localStorage.setItem(newLabel.textContent, JSON.stringify(prodData));
         update();
+        }
     });
 }
 }
